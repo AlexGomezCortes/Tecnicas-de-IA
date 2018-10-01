@@ -1,35 +1,58 @@
 #include <iostream>
 #include <SDL.h>
-#include "../SDL_Steering_Behaviors/Renderer.h"
 #include <SDL_image.h>
-#include "../SDL_Steering_Behaviors/Scene.h"
-#include "../SDL_Steering_Behaviors/Seek.h"
 
+#include "SDL_SimpleApp.h"
+#include "SceneKinematicSeek.h"
+#include "SceneKinematicFlee.h"
 
 
 using namespace std;
-SDL_Event event;
 
 int main(int argc, char ** argv)
 {
 	bool quit = false;
-	Scene* escena = new Seek();
-	
+	SDL_Event event;
+
+	SDL_SimpleApp *app = SDL_SimpleApp::Instance();
+
+	Scene *curr_scene = new SceneKinematicSeek;
+	app->setWindowTitle(curr_scene->getTitle());
 
 	while (!quit)
 	{
-		//si clickamos el 1, 
-		//escena=new seek()
+		// run app frame by frame
+		event = app->run(curr_scene);
 
-		//si clickamos el 2
-		//escena=new flee()
-
-		//y asi con todos los comportamientos, es bastante más simple que lo del profe
-
-
-
-		escena->update();
-		escena->draw();
+		/* Keyboard events */
+		switch (event.type)
+		{
+		case SDL_KEYDOWN:
+			if (event.key.keysym.scancode == SDL_SCANCODE_1)
+			{
+				delete(curr_scene);
+				curr_scene = new SceneKinematicSeek;
+				app->setWindowTitle(curr_scene->getTitle());
+			}
+			if (event.key.keysym.scancode == SDL_SCANCODE_2)
+			{
+				delete(curr_scene);
+				curr_scene = new SceneKinematicFlee;
+				app->setWindowTitle(curr_scene->getTitle());
+			}
+			if ((event.key.keysym.scancode == SDL_SCANCODE_Q) || (event.key.keysym.scancode == SDL_SCANCODE_ESCAPE))
+			{
+				quit = true;
+			}
+			if (event.key.keysym.scancode == SDL_SCANCODE_F)
+			{
+				app->setFullScreen();
+			}
+			break;
+		case SDL_QUIT:
+			quit = true;
+			break;
+		}
 
 	}
 
