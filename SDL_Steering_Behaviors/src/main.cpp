@@ -18,6 +18,16 @@ int main(int argc, char ** argv)
 
 	while (!quit)
 	{
+		//si clickamos el 1, 
+		//escena=new seek()
+
+		//si clickamos el 2
+		//escena=new flee()
+
+		//y asi con todos los comportamientos, es bastante más simple que lo del profe
+
+
+
 		escena->update();
 		escena->draw();
 
