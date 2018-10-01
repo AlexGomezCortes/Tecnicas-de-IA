@@ -138,6 +138,8 @@
   <ItemGroup>
     <ClCompile Include="..\src\main.cpp" />
     <ClCompile Include="Renderer.cpp" />
+    <ClCompile Include="Scene.cpp" />
+    <ClCompile Include="Seek.cpp" />
   </ItemGroup>
   <ItemGroup>
     <Image Include="..\res\spritesheet.png" />
@@ -145,6 +147,8 @@
   <ItemGroup>
     <ClInclude Include="Globals.h" />
     <ClInclude Include="Renderer.h" />
+    <ClInclude Include="Scene.h" />
+    <ClInclude Include="Seek.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -14,7 +14,6 @@ private:
 	static Renderer *renderer;
 
 	unsigned int nextKey;
-	std::map <int, std::pair<int, int>> m_spriteData;
 	std::map <int, SDL_Texture*> m_images;
 
 public:
@@ -24,7 +23,7 @@ public:
 	~Renderer();
 
 	int loadIMG(std::string path);
-	void renderSprite(int id, const SDL_Rect &rect, std::pair<int, int> spriteCoor);
+	void renderIMG(int id, const SDL_Rect &rect);
 
 	void Clear();
 	void Render();

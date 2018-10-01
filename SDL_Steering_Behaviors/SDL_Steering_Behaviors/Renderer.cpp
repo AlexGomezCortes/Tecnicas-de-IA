@@ -45,21 +45,18 @@ void Renderer::Render()
 
 int Renderer::loadIMG(std::string path)
 {
-	SDL_Texture* tempTex = IMG_LoadTexture(m_renderer, path.c_str());
+	SDL_Surface* tmpSurface = IMG_Load(path.c_str());
+	SDL_Texture* tempTex = SDL_CreateTextureFromSurface(m_renderer, tmpSurface);
+	SDL_FreeSurface(tmpSurface);
 	m_images[nextKey] = tempTex;
 
 	return nextKey++;
 }
 
-void Renderer::renderSprite(int id, const SDL_Rect & rect, std::pair<int, int> spriteCoor)
+void Renderer::renderIMG(int id, const SDL_Rect & rect)
 {
-	SDL_Rect local;
-	local.x = m_spriteData[id].first*spriteCoor.first;
-	local.y = m_spriteData[id].second*spriteCoor.second;
-	local.w = m_spriteData[id].first;
-	local.h = m_spriteData[id].second;
-
-	SDL_RenderCopy(m_renderer, m_images[id], &local, &rect);
+	SDL_RenderCopy(m_renderer, m_images[id], nullptr, &rect);
+	SDL_RenderPresent(m_renderer);
 }
 
 
