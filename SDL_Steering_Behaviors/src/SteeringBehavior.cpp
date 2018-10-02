@@ -78,6 +78,14 @@ Vector2D SteeringBehavior::Arrive(Agent * agent, Agent * target, float dtime)
 	return KinematicSeek(agent, target->position, dtime);
 }
 
+Vector2D SteeringBehavior::KinematicPursue(Agent * agent, Agent * target, float dtime)
+{
+	//Esto está por terminar
+	/*Vector2D distanceToTarget = target->position - agent->position;
+	Vector2D T = distanceToTarget/agent->velocity;
+	Vector2D PredictetTarget = target->position + target->velocity * T;*/
+}
+
 /* Add here your own Steering Behavior functions definitions */
 
 Vector2D SteeringBehavior::Seek(Agent *agent, Vector2D target, float dtime)
