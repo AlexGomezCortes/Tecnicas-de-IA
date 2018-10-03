@@ -5,10 +5,13 @@ using namespace std;
 SceneKinematicPursue::SceneKinematicPursue()
 {
 	Agent *agent = new Agent;
+	Agent *second_agent = new Agent;
 	agent->setPosition(Vector2D(640, 360));
 	agent->setTarget(Vector2D(640, 360));
+	second_agent->setPosition(Vector2D(840, 460));
 	agent->loadSpriteTexture("../res/soldier.png", 4);
 	agents.push_back(agent);
+	agents.push_back(second_agent);
 	target = Vector2D(640, 360);
 }
 
@@ -36,7 +39,7 @@ void SceneKinematicPursue::update(float dtime, SDL_Event *event)
 		break;
 	}
 
-	Vector2D steering_force = agents[0]->Behavior()->KinematicSeek(agents[0], agents[0]->getTarget(), dtime);
+	Vector2D steering_force = agents[0]->Behavior()->KinematicPursue(agents[0], agents[1], dtime);
 	agents[0]->update(steering_force, dtime, event);
 }
 
