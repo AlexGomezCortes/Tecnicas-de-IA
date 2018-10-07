@@ -7,6 +7,7 @@
 #include "SceneKinematicFlee.h"
 #include "SceneKinematicArrive.h"
 #include "../SDL_Steering_Behaviors/SceneKinematicPursue.h"
+#include "../SDL_Steering_Behaviors/SceneKinematicEvade.h"
 
 
 using namespace std;
@@ -52,6 +53,12 @@ int main(int argc, char ** argv)
 			{
 				delete(curr_scene);
 				curr_scene = new SceneKinematicPursue;
+				app->setWindowTitle(curr_scene->getTitle());
+			}
+			if (event.key.keysym.scancode == SDL_SCANCODE_5)
+			{
+				delete(curr_scene);
+				curr_scene = new SceneKinematicEvade;
 				app->setWindowTitle(curr_scene->getTitle());
 			}
 			if ((event.key.keysym.scancode == SDL_SCANCODE_Q) || (event.key.keysym.scancode == SDL_SCANCODE_ESCAPE))

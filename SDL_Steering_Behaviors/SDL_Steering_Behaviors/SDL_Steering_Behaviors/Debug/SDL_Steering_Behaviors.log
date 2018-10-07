@@ -1,2 +1,12 @@
-﻿  SceneKinematicPursue.cpp
-  SDL_Steering_Behaviors.vcxproj -> C:\Users\alber\Desktop\Tecnicas-de-IA\SDL_Steering_Behaviors\\bin\SDL_Steering_Behaviors.exe
+﻿  Agent.cpp
+  main.cpp
+  SceneKinematicArrive.cpp
+  SceneKinematicFlee.cpp
+  SceneKinematicSeek.cpp
+  SteeringBehavior.cpp
+  SceneKinematicEvade.cpp
+  SceneKinematicPursue.cpp
+  Generando código...
+SteeringBehavior.obj : error LNK2019: símbolo externo "public: struct Vector2D __thiscall SteeringBehavior::KinematicSeek(class Agent *,class Agent *,float)" (?KinematicSeek@SteeringBehavior@@QAE?AUVector2D@@PAVAgent@@0M@Z) sin resolver al que se hace referencia en la función "public: struct Vector2D __thiscall SteeringBehavior::KinematicPursue(class Agent *,class Agent *,float)" (?KinematicPursue@SteeringBehavior@@QAE?AUVector2D@@PAVAgent@@0M@Z)
+SteeringBehavior.obj : error LNK2019: símbolo externo "public: struct Vector2D __thiscall SteeringBehavior::KinematicFlee(class Agent *,class Agent *,float)" (?KinematicFlee@SteeringBehavior@@QAE?AUVector2D@@PAVAgent@@0M@Z) sin resolver al que se hace referencia en la función "public: struct Vector2D __thiscall SteeringBehavior::KinematicEvade(class Agent *,class Agent *,float)" (?KinematicEvade@SteeringBehavior@@QAE?AUVector2D@@PAVAgent@@0M@Z)
+C:\Users\alber\Desktop\Tecnicas-de-IA\SDL_Steering_Behaviors\\bin\SDL_Steering_Behaviors.exe : fatal error LNK1120: 2 externos sin resolver

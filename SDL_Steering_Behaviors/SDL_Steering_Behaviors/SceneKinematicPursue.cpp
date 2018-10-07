@@ -34,7 +34,7 @@ void SceneKinematicPursue::update(float dtime, SDL_Event *event)
 		if (event->button.button == SDL_BUTTON_LEFT)
 		{
 			target = Vector2D((float)(event->button.x), (float)(event->button.y));
-			agents[0]->setTarget(target);
+			//agents[0]->setTarget(target);
 			agents[1]->setTarget(target);
 		}
 		break;
@@ -43,9 +43,9 @@ void SceneKinematicPursue::update(float dtime, SDL_Event *event)
 	}
 
 	Vector2D steering_force = agents[0]->Behavior()->KinematicPursue(agents[0], agents[1], dtime);
-	Vector2D target_force = agents[1]->Behavior()->KinematicSeek(agents[1], agents[1]->getTarget(), dtime);
-	
 	agents[0]->update(steering_force, dtime, event);
+
+	Vector2D target_force = agents[1]->Behavior()->KinematicSeek(agents[1], agents[1]->getTarget(), dtime);	
 	agents[1]->update(target_force, dtime, event);
 }
 
@@ -58,5 +58,5 @@ void SceneKinematicPursue::draw()
 
 const char* SceneKinematicPursue::getTitle()
 {
-	return "SDL Steering Behaviors :: KinematicSeek Demo";
+	return "SDL Steering Behaviors :: KinematicPursue Demo";
 }
