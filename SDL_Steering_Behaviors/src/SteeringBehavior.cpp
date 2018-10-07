@@ -95,7 +95,7 @@ Vector2D SteeringBehavior::KinematicPursue(Agent * agent, Agent * target, float 
 {
 
 	float distanceToTarget = Vector2D::Distance(target->position, Vector2D(agent->getPosition()));
-	std::cout << distanceToTarget + '\n';
+	//std::cout << distanceToTarget + '\n';
 
 	float T = distanceToTarget / agent->getVelocity().Length();
 
