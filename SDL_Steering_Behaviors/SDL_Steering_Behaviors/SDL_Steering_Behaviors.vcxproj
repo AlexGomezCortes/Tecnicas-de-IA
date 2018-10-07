@@ -28,8 +28,8 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
-    <PlatformToolset>v141</PlatformToolset>
     <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v141</PlatformToolset>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
@@ -139,6 +139,7 @@
     <ClCompile Include="..\src\SteeringBehavior.cpp" />
     <ClCompile Include="..\src\utils.cpp" />
     <ClCompile Include="SceneKinematicEvade.cpp" />
+    <ClCompile Include="SceneKinematicFlocking.cpp" />
     <ClCompile Include="SceneKinematicPursue.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -152,6 +153,7 @@
     <ClInclude Include="..\src\SDL_SimpleApp.h" />
     <ClInclude Include="..\src\Vector2D.h" />
     <ClInclude Include="SceneKinematicEvade.h" />
+    <ClInclude Include="SceneKinematicFlocking.h" />
     <ClInclude Include="SceneKinematicPursue.h" />
   </ItemGroup>
   <ItemGroup>

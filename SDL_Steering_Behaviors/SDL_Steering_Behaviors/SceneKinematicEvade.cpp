@@ -41,11 +41,11 @@ void SceneKinematicEvade::update(float dtime, SDL_Event *event)
 	default:
 		break;
 	}
-	Vector2D steering_forceSOLDIER = agents[0]->Behavior()->KinematicSeek(agents[0], agents[0]->getTarget(), dtime);
-	agents[0]->update(steering_forceSOLDIER, dtime, event);
+	//Vector2D steering_forceSOLDIER = agents[0]->Behavior()->KinematicSeek(agents[0], agents[0]->getTarget(), dtime);
+	//agents[0]->update(steering_forceSOLDIER, dtime, event);
 
-	Vector2D steering_force = agents[1]->Behavior()->KinematicEvade(agents[1], agents[0], dtime);
-	agents[1]->update(steering_force, dtime, event);
+	//Vector2D steering_force = agents[1]->Behavior()->KinematicEvade(agents[1], agents[0], dtime);
+	//agents[1]->update(steering_force, dtime, event);
 }
 
 void SceneKinematicEvade::draw()

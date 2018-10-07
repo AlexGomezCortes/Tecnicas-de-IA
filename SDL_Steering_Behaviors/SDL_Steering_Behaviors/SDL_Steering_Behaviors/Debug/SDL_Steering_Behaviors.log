@@ -4,9 +4,18 @@
   SceneKinematicFlee.cpp
   SceneKinematicSeek.cpp
   SteeringBehavior.cpp
+c:\users\alexm\documents\github\tecnicas-de-ia\sdl_steering_behaviors\src\steeringbehavior.cpp(121): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\alexm\documents\github\tecnicas-de-ia\sdl_steering_behaviors\src\steeringbehavior.cpp(138): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\alexm\documents\github\tecnicas-de-ia\sdl_steering_behaviors\src\steeringbehavior.cpp(156): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
   SceneKinematicEvade.cpp
+  SceneKinematicFlocking.cpp
+c:\users\alexm\documents\github\tecnicas-de-ia\sdl_steering_behaviors\sdl_steering_behaviors\scenekinematicflocking.cpp(12): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\alexm\documents\github\tecnicas-de-ia\sdl_steering_behaviors\sdl_steering_behaviors\scenekinematicflocking.cpp(13): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\alexm\documents\github\tecnicas-de-ia\sdl_steering_behaviors\sdl_steering_behaviors\scenekinematicflocking.cpp(15): warning C4305: 'argument': truncation from 'double' to 'float'
+c:\users\alexm\documents\github\tecnicas-de-ia\sdl_steering_behaviors\sdl_steering_behaviors\scenekinematicflocking.cpp(17): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\alexm\documents\github\tecnicas-de-ia\sdl_steering_behaviors\sdl_steering_behaviors\scenekinematicflocking.cpp(39): warning C4018: '<': signed/unsigned mismatch
+c:\users\alexm\documents\github\tecnicas-de-ia\sdl_steering_behaviors\sdl_steering_behaviors\scenekinematicflocking.cpp(49): warning C4018: '<': signed/unsigned mismatch
+c:\users\alexm\documents\github\tecnicas-de-ia\sdl_steering_behaviors\sdl_steering_behaviors\scenekinematicflocking.cpp(61): warning C4018: '<': signed/unsigned mismatch
   SceneKinematicPursue.cpp
-  Generando código...
-SteeringBehavior.obj : error LNK2019: símbolo externo "public: struct Vector2D __thiscall SteeringBehavior::KinematicSeek(class Agent *,class Agent *,float)" (?KinematicSeek@SteeringBehavior@@QAE?AUVector2D@@PAVAgent@@0M@Z) sin resolver al que se hace referencia en la función "public: struct Vector2D __thiscall SteeringBehavior::KinematicPursue(class Agent *,class Agent *,float)" (?KinematicPursue@SteeringBehavior@@QAE?AUVector2D@@PAVAgent@@0M@Z)
-SteeringBehavior.obj : error LNK2019: símbolo externo "public: struct Vector2D __thiscall SteeringBehavior::KinematicFlee(class Agent *,class Agent *,float)" (?KinematicFlee@SteeringBehavior@@QAE?AUVector2D@@PAVAgent@@0M@Z) sin resolver al que se hace referencia en la función "public: struct Vector2D __thiscall SteeringBehavior::KinematicEvade(class Agent *,class Agent *,float)" (?KinematicEvade@SteeringBehavior@@QAE?AUVector2D@@PAVAgent@@0M@Z)
-C:\Users\alber\Desktop\Tecnicas-de-IA\SDL_Steering_Behaviors\\bin\SDL_Steering_Behaviors.exe : fatal error LNK1120: 2 externos sin resolver
+  Generating Code...
+  SDL_Steering_Behaviors.vcxproj -> C:\Users\alexm\Documents\GitHub\Tecnicas-de-IA\SDL_Steering_Behaviors\\bin\SDL_Steering_Behaviors.exe
