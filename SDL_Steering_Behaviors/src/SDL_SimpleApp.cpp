@@ -16,8 +16,8 @@ SDL_SimpleApp * SDL_SimpleApp::Instance()
 SDL_SimpleApp::SDL_SimpleApp()
 {
 	win_fullscreen = false;
-	win_width = 1280;
-	win_height = 768;
+	win_width = 1920;
+	win_height = 1080;
 
 	SDL_Init(SDL_INIT_VIDEO);
 

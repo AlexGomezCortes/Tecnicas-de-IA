@@ -14,10 +14,10 @@ public:
 	Vector2D KinematicSeek(Agent *agent, Agent *target, float dtime);
 	Vector2D KinematicFlee(Agent *agent, Vector2D target, float dtime);
 	Vector2D KinematicFlee(Agent *agent, Agent *target, float dtime);
-	/*Vector2D KinematicPursue(Agent *agent, Vector2D target, float dtime);
+	Vector2D KinematicPursue(Agent *agent, Vector2D target, float dtime);
 	Vector2D KinematicPursue(Agent *agent, Agent *target, float dtime);
 	Vector2D KinematicEvade(Agent *agent, Vector2D target, float dtime);
-	Vector2D KinematicEvade(Agent *agent, Agent *target, float dtime);*/
+	Vector2D KinematicEvade(Agent *agent, Agent *target, float dtime);
 	Vector2D Flocking(std::vector<Agent*> agents, Agent *agent, float dtime);
 	Vector2D FlocSeparation(std::vector<Agent*> agents, Agent *agent, float dtime, float neighbor_radius);
 	Vector2D FlocCohesion(std::vector<Agent*> agents, Agent *agent, float dtime, float neighbor_radius);

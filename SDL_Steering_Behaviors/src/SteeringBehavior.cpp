@@ -56,47 +56,38 @@ Vector2D SteeringBehavior::Arrive(Agent * agent, Vector2D target, float dtime)
 	return steering_force * agent->max_velocity;
 }
 
-//Vector2D SteeringBehavior::KinematicPursue(Agent * agent, Agent * target, float dtime)
-//{
-//
-//	if (target->velocity.Length() != 0)
-//	{
-//		float T = ((target->position - agent->position) / target->velocity.Length()).Length();
-//		Vector2D PredictedTarget = target->position + target->velocity * T;
-//		return  KinematicSeek(agent, PredictedTarget, dtime);
-//	}
-//	else
-//	{
-//		return KinematicSeek(agent, target, dtime);
-//	}
-//}
-//
-//Vector2D SteeringBehavior::KinematicEvade(Agent *agent, Agent *target, float dtime) {
-//
-//	if (target->velocity.Length() != 0)
-//	{
-//		float T = ((agent->position - target->position) / target->velocity.Length()).Length();
-//		Vector2D PredictedTarget = target->position + target->velocity * T;
-//		return  KinematicFlee(agent, PredictedTarget, dtime);
-//	}
-//	else
-//	{
-//		return KinematicFlee(agent, target, dtime);
-//	}
-//}
+Vector2D SteeringBehavior::KinematicPursue(Agent * agent, Agent * target, float dtime)
+{
+	if (target->velocity.Length() != 0)
+	{
+		float T = ((target->position - agent->position) / target->velocity.Length()).Length();
+		Vector2D PredictedTarget = target->position + target->velocity * T;
+		return PredictedTarget;
+	}
+}
+
+Vector2D SteeringBehavior::KinematicEvade(Agent *agent, Agent *target, float dtime) {
+
+	if (target->velocity.Length() != 0)
+	{
+		float T = ((agent->position - target->position) / target->velocity.Length()).Length();
+		Vector2D PredictedTarget = target->position + target->velocity * T;
+		return PredictedTarget;
+	}
+}
 
 Vector2D SteeringBehavior::Flocking(std::vector<Agent*> agents, Agent *agent, float dtime)
 {
-	float neighborRadius = 150;
+	float neighborRadius = 80;
 	Vector2D flockingForce;
-	float K_SEPARATION = 0.8f;
-	float K_COHESION = 0.6f;
-	float K_ALIGNMENT = 0.4f;
-	float K_MAX_FLOCKING_FORCE = 2;
+	float K_SEPARATION = 500.f;
+	float K_COHESION = 2.f;
+	float K_ALIGNMENT = 1.f;
+	float K_MAX_FLOCKING_FORCE = 50;
 
 	Vector2D separationDirection = FlocSeparation(agents, agent, dtime, neighborRadius);
-	Vector2D cohesionDirection = FlocSeparation(agents, agent, dtime, neighborRadius);
-	Vector2D alignmentDirection = FlocSeparation(agents, agent, dtime, neighborRadius);
+	Vector2D cohesionDirection = FlocCohesion(agents, agent, dtime, neighborRadius);
+	Vector2D alignmentDirection = FlocAlignment(agents, agent, dtime, neighborRadius);
 
 	flockingForce = (separationDirection * K_SEPARATION) + (cohesionDirection * K_COHESION) + (alignmentDirection * K_ALIGNMENT);
 	flockingForce *= K_MAX_FLOCKING_FORCE;
@@ -135,8 +126,9 @@ Vector2D SteeringBehavior::FlocCohesion(std::vector<Agent*> agents, Agent * agen
 			++neighborCount;
 		}
 	}
+
 	averagePosition /= neighborCount;
-	averagePosition -= agent->position;
+	averagePosition -= agent->position;	
 	return Vector2D::Normalize(averagePosition);
 }
 

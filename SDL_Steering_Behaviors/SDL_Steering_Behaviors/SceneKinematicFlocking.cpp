@@ -4,13 +4,13 @@
 
 SceneKinematicFlocking::SceneKinematicFlocking()
 {
-	for (int i = 0; i < 30; i++)
+	for (int i = 0; i < 60; i++)
 	{
 		Agent *agent = new Agent;
 		int posX = rand() % 1200;
 		int posY = rand() % 700;
 		agent->setPosition(Vector2D(posX, posY));
-		agent->setTarget(Vector2D(posX, posY));
+		//agent->setTarget(Vector2D(posX, posY));
 		agent->loadSpriteTexture("../res/zombie1.png", 8);
 		agent->setMass(0.1);
 		agents.push_back(agent);
@@ -48,10 +48,10 @@ void SceneKinematicFlocking::update(float dtime, SDL_Event * event)
 
 	for (int i = 0; i < agents.size(); i++)
 	{
-		Vector2D flock = agents[0]->Behavior()->Flocking(agents, agents[i], dtime);
-		Vector2D seek = agents[i]->Behavior()->Seek(agents[i], target, dtime);
-		Vector2D steering_force = flock + seek;
-		agents[i]->update(steering_force, dtime, event);
+		Vector2D flock = agents[i]->Behavior()->Flocking(agents, agents[i], dtime);
+		Vector2D seek = agents[i]->Behavior()->KinematicSeek(agents[i], agents[i]->getTarget(), dtime);
+		Vector2D steering_force = seek + flock;
+		agents[i]->update(seek + flock, dtime, event);
 	}
 }
 
