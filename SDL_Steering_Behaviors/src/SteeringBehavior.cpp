@@ -80,7 +80,7 @@ Vector2D SteeringBehavior::Flocking(std::vector<Agent*> agents, Agent *agent, fl
 {
 	float neighborRadius = 80;
 	Vector2D flockingForce;
-	float K_SEPARATION = 500.f;
+	float K_SEPARATION = 300.f;
 	float K_COHESION = 2.f;
 	float K_ALIGNMENT = 1.f;
 	float K_MAX_FLOCKING_FORCE = 50;

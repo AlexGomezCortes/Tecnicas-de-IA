@@ -12,7 +12,7 @@ SceneKinematicFlocking::SceneKinematicFlocking()
 		agent->setPosition(Vector2D(posX, posY));
 		//agent->setTarget(Vector2D(posX, posY));
 		agent->loadSpriteTexture("../res/zombie1.png", 8);
-		agent->setMass(0.1);
+		agent->setMass(10.f);
 		agents.push_back(agent);
 		target = Vector2D(posX, posY);
 	}
