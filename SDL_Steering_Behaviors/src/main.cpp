@@ -9,6 +9,7 @@
 #include "../SDL_Steering_Behaviors/SceneKinematicPursue.h"
 #include "../SDL_Steering_Behaviors/SceneKinematicEvade.h"
 #include "../SDL_Steering_Behaviors/SceneKinematicFlocking.h"
+#include "../SDL_Steering_Behaviors/ScenePathFollowing.h"
 
 
 using namespace std;
@@ -66,6 +67,12 @@ int main(int argc, char ** argv)
 			{
 				delete(curr_scene);
 				curr_scene = new SceneKinematicFlocking;
+				app->setWindowTitle(curr_scene->getTitle());
+			}
+			if (event.key.keysym.scancode == SDL_SCANCODE_7)
+			{
+				delete(curr_scene);
+				curr_scene = new ScenePathFollowing;
 				app->setWindowTitle(curr_scene->getTitle());
 			}
 			if ((event.key.keysym.scancode == SDL_SCANCODE_Q) || (event.key.keysym.scancode == SDL_SCANCODE_ESCAPE))

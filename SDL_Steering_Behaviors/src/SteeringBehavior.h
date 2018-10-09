@@ -22,6 +22,7 @@ public:
 	Vector2D FlocSeparation(std::vector<Agent*> agents, Agent *agent, float dtime, float neighbor_radius);
 	Vector2D FlocCohesion(std::vector<Agent*> agents, Agent *agent, float dtime, float neighbor_radius);
 	Vector2D FlocAlignment(std::vector<Agent*>agents, Agent *agent, float dtime, float neighbor_radius);
+	Vector2D PathFollowing(Agent *agent, Vector2D target, float dtime);
 
 	/* Add here your own Steering Behavior functions declarations */
 	Vector2D Seek(Agent *agent, Vector2D target, float dtime);

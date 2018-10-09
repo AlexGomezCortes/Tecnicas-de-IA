@@ -141,6 +141,7 @@
     <ClCompile Include="SceneKinematicEvade.cpp" />
     <ClCompile Include="SceneKinematicFlocking.cpp" />
     <ClCompile Include="SceneKinematicPursue.cpp" />
+    <ClCompile Include="ScenePathFollowing.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\src\Agent.h" />
@@ -155,6 +156,7 @@
     <ClInclude Include="SceneKinematicEvade.h" />
     <ClInclude Include="SceneKinematicFlocking.h" />
     <ClInclude Include="SceneKinematicPursue.h" />
+    <ClInclude Include="ScenePathFollowing.h" />
   </ItemGroup>
   <ItemGroup>
     <Image Include="..\res\spritesheet.png" />
