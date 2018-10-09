@@ -36,14 +36,16 @@ void ScenePathFollowing::update(float dtime, SDL_Event *event)
 	default:
 		break;
 	}
-
-	Vector2D steering_force = agents[0]->Behavior()->KinematicSeek(agents[0], _path.pathArray[agents[0]->currentTargetIndex], dtime);
-	if (Vector2D::Distance(agents[0]->getPosition(), _path.pathArray[agents[0]->currentTargetIndex]) < 5)
+	if (_path.pathArray.size() > 0)
 	{
-		agents[0]->currentTargetIndex++;
-		//_path.pathArray.pop_front();
+		Vector2D steering_force = agents[0]->Behavior()->KinematicSeek(agents[0], _path.pathArray.front(), dtime);
+		if (Vector2D::Distance(agents[0]->getPosition(), _path.pathArray.front()) < 30)
+		{
+			_path.pathArray.pop_front();
+			//agents[0]->currentTargetIndex++;
+		}
+		agents[0]->update(steering_force, dtime, event);
 	}
-	agents[0]->update(steering_force, dtime, event);
 }
 
 void ScenePathFollowing::drawCircle(Vector2D circle)

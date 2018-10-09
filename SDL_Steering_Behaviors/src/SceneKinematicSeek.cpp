@@ -30,7 +30,7 @@ void SceneKinematicSeek::update(float dtime, SDL_Event *event)
 		if (event->button.button == SDL_BUTTON_LEFT)
 		{
 			target = Vector2D((float)(event->button.x), (float)(event->button.y));
-			//agents[0]->setTarget(target);
+			agents[0]->setTarget(target);
 		}
 		break;
 	default:

@@ -14,7 +14,7 @@ public:
 	void drawCircle(Vector2D circle);
 	void draw();
 	const char* getTitle();
-	//std::vector<Vector2D> targets;
+	std::vector<Vector2D> targets;
 	struct Path
 	{
 		std::deque<Vector2D> pathArray;

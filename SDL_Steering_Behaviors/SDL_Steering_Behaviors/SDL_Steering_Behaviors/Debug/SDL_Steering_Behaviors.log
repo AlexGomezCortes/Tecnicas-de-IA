@@ -1,3 +1,2 @@
-﻿  ScenePathFollowing.cpp
-c:\users\alumno\documents\github\tecnicas-de-ia\sdl_steering_behaviors\sdl_steering_behaviors\scenepathfollowing.cpp(43): warning C4018: '<=': signed/unsigned mismatch
+﻿  SceneKinematicSeek.cpp
   SDL_Steering_Behaviors.vcxproj -> C:\Users\alumno\Documents\GitHub\Tecnicas-de-IA\SDL_Steering_Behaviors\\bin\SDL_Steering_Behaviors.exe
